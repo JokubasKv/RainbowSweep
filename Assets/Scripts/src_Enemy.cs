@@ -6,6 +6,14 @@ using UnityEngine.AI;
 public class src_Enemy : MonoBehaviour
 {
     [SerializeField]
+    float damage;
+    float lastAttackTime = 0;
+
+    [SerializeField]
+    float attackCooldown = 2;
+
+
+    [SerializeField]
     float stoppingDistance;
     NavMeshAgent agent;
 
@@ -26,6 +34,7 @@ public class src_Enemy : MonoBehaviour
         if (dist < stoppingDistance)
         {
             StopEnemy();
+            Attack();
         }
         else
         {
@@ -44,5 +53,15 @@ public class src_Enemy : MonoBehaviour
     {
         agent.isStopped = true;
         anim.SetBool("isWalking", false);
+    }
+
+    private void Attack()
+    {
+        if (Time.time - lastAttackTime > attackCooldown)
+        {
+            lastAttackTime = Time.time;
+            target.GetComponent<src_CharacterStats>().TakeDamage(damage);
+            target.GetComponent<src_CharacterStats>().CheckHealth();
+        }
     }
 }
