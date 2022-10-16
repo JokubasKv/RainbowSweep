@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class src_Enemy : MonoBehaviour
+public class src_Enemy : src_CharacterStats
 {
     [SerializeField]
     float damage;
@@ -63,5 +63,10 @@ public class src_Enemy : MonoBehaviour
             target.GetComponent<src_CharacterStats>().TakeDamage(damage);
             target.GetComponent<src_CharacterStats>().CheckHealth();
         }
+    }
+
+    public override void Die()
+    {
+        Destroy(gameObject);
     }
 }
