@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7112613924344935793}
   - component: {fileID: 7112613924344935794}
   m_Layer: 0
-  m_Name: BlueFireball
+  m_Name: RedFireball
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: -0.6555493, y: 1.0577188, z: 1.3973209}
   m_LocalScale: {x: 0.21334, y: 0.21334, z: 0.21334}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8274173005204880064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,9 +134,10 @@ MonoBehaviour:
     type: 3}
   whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 0
-  bouncinnes: 0.518
-  useGravity: 1
+    m_Bits: 256
+  bouncinnes: 0.937
+  onSpawnGravity: 0
+  onReleaseGravity: 1
   explosionDamage: 100
   explosionRange: 1
   maxCollisions: 2
@@ -160,7 +162,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
@@ -187,7 +189,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7112613924344935793}
+        m_TargetAssemblyTypeName: scr_ExplodingBall, Assembly-CSharp
+        m_MethodName: WhenReleased
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -262,3 +276,93 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!1001 &6643487348135181680
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7112613924344935756}
+    m_Modifications:
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178310372354161325, guid: 471ce311cbae64a429bcc63705d0582c,
+        type: 3}
+      propertyPath: m_Name
+      value: FireEffect_Parent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 471ce311cbae64a429bcc63705d0582c, type: 3}
+--- !u!4 &8274173005204880064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3378170353887659952, guid: 471ce311cbae64a429bcc63705d0582c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6643487348135181680}
+  m_PrefabAsset: {fileID: 0}

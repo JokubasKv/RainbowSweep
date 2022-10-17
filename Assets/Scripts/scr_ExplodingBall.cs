@@ -9,10 +9,14 @@ public class scr_ExplodingBall : MonoBehaviour
     public GameObject explosion;
     public LayerMask whatIsEnemies;
 
-    [Header("Bullet Settings")]
+    [Header("Ball Settings")]
     [Range(0f, 1f)]
     public float bouncinnes;
-    public bool useGravity;
+    [Header("On Spawn Settings")]
+    public bool onSpawnGravity;
+    [Header("On Release Settings")]
+    public bool onReleaseGravity;
+
 
     public int explosionDamage;
     public float explosionRange;
@@ -29,8 +33,9 @@ public class scr_ExplodingBall : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
 
-        Setup();
+        SpawnSetup();
     }
     private void Update()
     {
@@ -87,7 +92,7 @@ public class scr_ExplodingBall : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    private void Setup()
+    private void SpawnSetup()
     {
         physics_mat = new PhysicMaterial();
         physics_mat.bounciness = bouncinnes;
@@ -96,8 +101,15 @@ public class scr_ExplodingBall : MonoBehaviour
 
         GetComponent<SphereCollider>().material = physics_mat;
 
-        rb.useGravity = useGravity;
+        rb.useGravity = onSpawnGravity;
     }
+
+    public void WhenReleased()
+    {
+        rb.useGravity = onReleaseGravity;
+    }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
