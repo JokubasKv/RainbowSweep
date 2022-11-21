@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 46ee107d2d63f57428c1ed06da4005d6
+  - enabled: 1
+    path: Assets/Scenes/MoodyNight.unity
+    guid: 6c5afed758d9dde4d96232ce7a139e63
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
