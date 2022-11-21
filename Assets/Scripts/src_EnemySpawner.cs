@@ -27,6 +27,19 @@ public class src_EnemySpawner : MonoBehaviour
     [SerializeField]
     private Transform coords;
 
+    [Header("Spawn offset coordinates")]
+    [SerializeField]
+    private float offsetX;
+    [SerializeField]
+    private float offsetZ;
+
+    [SerializeField]
+    private bool spawnMage;
+    [SerializeField]
+    private bool spawnWarrior;
+    [SerializeField]
+    private bool SpawnWraith;
+
     [Header("Maximum enenmy count")]
     [SerializeField]
     private int maxCount;
@@ -37,9 +50,18 @@ public class src_EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnEnemy(mageInterval, magePrefab));
-        StartCoroutine(spawnEnemy(warriorInterval, warriorPrefab));
-        StartCoroutine(spawnEnemy(wraithInterval, wraithPrefab));
+        if (spawnMage)
+        {
+            StartCoroutine(spawnEnemy(mageInterval, magePrefab));
+        }
+        if (spawnWarrior)
+        {
+            StartCoroutine(spawnEnemy(warriorInterval, warriorPrefab));
+        }
+        if (SpawnWraith)
+        {
+            StartCoroutine(spawnEnemy(wraithInterval, wraithPrefab));
+        }
     }
 
     private IEnumerator spawnEnemy(float inverval, GameObject enemy)
@@ -49,7 +71,7 @@ public class src_EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(inverval);
             if (count < maxCount)
             {
-                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(coords.position.x - 10f, coords.position.x + 10), coords.position.y, Random.Range(coords.position.z - 10f, coords.position.z + 10f)), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(coords.position.x - offsetX, coords.position.x + offsetX), coords.position.y, Random.Range(coords.position.z - offsetZ, coords.position.z + offsetZ)), Quaternion.identity);
                 count++;
                 StartCoroutine(spawnEnemy(inverval, enemy));
             }

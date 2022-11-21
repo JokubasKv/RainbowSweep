@@ -54,4 +54,9 @@ MonoBehaviour:
   warriorInterval: 5
   wraithInterval: 10
   coords: {fileID: 2479865852335799579}
+  offsetX: 5
+  offsetZ: 5
+  spawnMage: 1
+  spawnWarrior: 1
+  SpawnWraith: 0
   maxCount: 10
