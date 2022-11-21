@@ -49,7 +49,7 @@ public class src_EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(inverval);
             if (count < maxCount)
             {
-                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(coords.position.x - 10f, coords.position.x + 10), 0, Random.Range(coords.position.z - 10f, coords.position.z + 10f)), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(coords.position.x - 10f, coords.position.x + 10), coords.position.y, Random.Range(coords.position.z - 10f, coords.position.z + 10f)), Quaternion.identity);
                 count++;
                 StartCoroutine(spawnEnemy(inverval, enemy));
             }
