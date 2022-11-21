@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1ad06e818b049274dbefd22526042f86,
         type: 3}
       propertyPath: m_Name
-      value: Paintbrush
+      value: Paintbrush Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1ad06e818b049274dbefd22526042f86,
         type: 3}
@@ -362,4 +362,4 @@ MonoBehaviour:
   - spawnables: {fileID: 7112613924344935795, guid: 85f63b78021f0274c8b8e14807e04447,
       type: 3}
     onWhatShape: Circle
-    spawnColor: {r: 0, g: 0.035513878, b: 1, a: 0}
+    spawnColor: {r: 1, g: 0, b: 0.06511307, a: 0}

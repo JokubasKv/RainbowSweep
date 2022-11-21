@@ -6529,6 +6529,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 941301726, guid: 4db5f155f7b711048af24ada19bb41bc, type: 3}
+      propertyPath: spawnables.Array.data[0].spawnColor.b
+      value: 0.009897232
+      objectReference: {fileID: 0}
+    - target: {fileID: 941301726, guid: 4db5f155f7b711048af24ada19bb41bc, type: 3}
+      propertyPath: spawnables.Array.data[0].spawnColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941301726, guid: 4db5f155f7b711048af24ada19bb41bc, type: 3}
+      propertyPath: spawnables.Array.data[0].spawnColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8351230467614830321, guid: 4db5f155f7b711048af24ada19bb41bc,
         type: 3}
       propertyPath: m_RootOrder

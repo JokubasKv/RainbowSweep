@@ -6,6 +6,7 @@ using System.IO;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System;
 
 public class scr_PaintbrushDraw : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class scr_PaintbrushDraw : MonoBehaviour
     private List<Vector3> positionList = new List<Vector3>();
     private List<List<Vector3>> strokeList = new List<List<Vector3>>();
 
+
+    Vector3 planePosition = Vector3.zero;
+    Vector3 planeNormal = Vector3.zero;
+    List<Vector3> vectorPoints = new List<Vector3>();
+
     private void Awake()
     {
         finishDrawing.action.performed += FinishMovement;
@@ -66,7 +72,7 @@ public class scr_PaintbrushDraw : MonoBehaviour
     private void StartDrawing(ActivateEventArgs arg0)
     {
         isMoving = true;
-        Debug.Log("Hello Im Im entering");
+        //Debug.Log("Hello Im Im entering");
         isMoving = true;
         positionList.Clear();
         positionList.Add(movementSource.position);
@@ -78,7 +84,7 @@ public class scr_PaintbrushDraw : MonoBehaviour
     private void StopDrawing(DeactivateEventArgs arg0)
     {
         isMoving = false;
-        Debug.Log("Hello Im leaving");
+        //Debug.Log("Hello Im leaving");
 
         isMoving = false;
 
@@ -120,21 +126,42 @@ public class scr_PaintbrushDraw : MonoBehaviour
 
         Point[] pointArray = new Point[GetMultidimensionalCount(strokeList)];
 
+
         int count = 0;
+        for (int i = 0; i < strokeList.Count; i++)
+        {
+            for (int j = 0; j < strokeList[i].Count; j++)
+            {
+                vectorPoints.Add(strokeList[i][j]);
+                count++;
+            }
+        }
+
+        //Calculate Plane from points
+        Fit.Plane(vectorPoints, out planePosition, out planeNormal, 100, false);
+
+        //Calculate each points position on the plane
+        count = 0;
         for (int i = 0; i < strokeList.Count; i++)
         {
             //Create Gesture From Postion list
             for (int j = 0; j < strokeList[i].Count; j++)
             {
-                Vector2 screenPoint = Camera.main.WorldToScreenPoint(strokeList[i][j]);
-                pointArray[count] = new Point(screenPoint.x, screenPoint.y, i);
+                //Vector2 positionInPlane = Camera.main.WorldToScreenPoint(strokeList[i][j]);
+                Vector2 positionInPlane = GetLocalXAndYRelativeToPlane(planePosition, planeNormal, Vector3.up, strokeList[i][j]);
+                pointArray[count] = new Point(positionInPlane.x, positionInPlane.y, i);
                 count++;
             }
         }
 
+        /*Debug.Log(" " + String.Join("",
+            new List<Vector2>(pp)
+            .ConvertAll(i => i.ToString())
+            .ToArray()));*/
 
         Gesture newGesture = new Gesture(pointArray);
 
+        
         if (creationMode)
         {
             newGesture.Name = newGestureName;
@@ -159,7 +186,7 @@ public class scr_PaintbrushDraw : MonoBehaviour
                 }
             }
         }
-
+        vectorPoints.Clear();
         strokeList.Clear();
         lineList.Clear();
         currentLineRenderer = null;
@@ -221,5 +248,22 @@ public class scr_PaintbrushDraw : MonoBehaviour
             }
         }
         return sum;
+    }
+
+    void OnDrawGizmos()
+    {
+        if(vectorPoints.Count > 0)
+            Fit.Plane(vectorPoints, out planePosition, out planeNormal, 100, true);
+    }
+
+    private static Transform referenceObject;
+    public static Vector2 GetLocalXAndYRelativeToPlane(Vector3 planeCenter, Vector3 forward, Vector3 up, Vector3 worldPoint)
+    {
+        if (referenceObject == null) referenceObject = new GameObject("Reference").transform;
+
+        referenceObject.position = planeCenter;
+        referenceObject.rotation = Quaternion.LookRotation(forward, up);
+        Vector3 rtn = referenceObject.InverseTransformPoint(worldPoint);
+        return rtn;
     }
 }
