@@ -121,6 +121,7 @@ public class scr_PaintbrushDraw : MonoBehaviour
 
     void FinishMovement(InputAction.CallbackContext context)
     {
+        if (strokeList.Count == 0) return;
         if (isMoving) return;
 
 

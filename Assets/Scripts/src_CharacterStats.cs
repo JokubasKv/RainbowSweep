@@ -28,11 +28,12 @@ public class src_CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
-        // Override
+        Debug.Log(this.ToString() + " Has Died");
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        CheckHealth();
     }
 }

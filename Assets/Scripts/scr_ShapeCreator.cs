@@ -28,14 +28,17 @@ public class scr_ShapeCreator : MonoBehaviour
     }
     public void SpawnObject(string objectName, List<LineRenderer> lines)
     {
+        bool found=false;
         foreach(var spawn in spawnables)
         {
+            Debug.Log("|"+spawn.onWhatShape + "| |" + objectName+"|");
             if (spawn.onWhatShape == objectName)
             {
+
                 List<Vector3> allPoints = new List<Vector3>();
                 foreach (var line in lines)
                 {
-                    Vector3[] positions=new Vector3[line.positionCount];
+                    Vector3[] positions = new Vector3[line.positionCount];
                     line.GetPositions(positions);
                     allPoints.AddRange(positions);
                 }
@@ -44,7 +47,7 @@ public class scr_ShapeCreator : MonoBehaviour
 
                 Instantiate(spawn.spawnables, middlePoint, Quaternion.identity);
 
-
+                found = true;
 
                 foreach (LineRenderer line in lines)
                 {
@@ -52,7 +55,16 @@ public class scr_ShapeCreator : MonoBehaviour
                     line.endColor = spawn.spawnColor;
                     StartCoroutine(LineDisapear(line, 3f));
                 }
+                return;
+            }
+        }
+        if (!found)
+        {
+            Debug.Log(objectName + " | Failed to find corespondig shape name");
 
+            foreach (LineRenderer line in lines)
+            {
+                //StartCoroutine(LineDisapear(line, 3f));
             }
         }
     }

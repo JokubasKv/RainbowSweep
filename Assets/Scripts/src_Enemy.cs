@@ -61,7 +61,6 @@ public class src_Enemy : src_CharacterStats
         {
             lastAttackTime = Time.time;
             target.GetComponent<src_CharacterStats>().TakeDamage(damage);
-            target.GetComponent<src_CharacterStats>().CheckHealth();
         }
     }
 
