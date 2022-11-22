@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2554541529591151230}
   m_Father: {fileID: 0}
@@ -38,6 +39,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2040376994840921275}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,6 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
@@ -67,16 +78,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
         type: 3}
@@ -102,6 +103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crystal_01_LP
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 053f05c99fa8e47989cbde1dc1c4d0f9,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053f05c99fa8e47989cbde1dc1c4d0f9, type: 3}
