@@ -40,15 +40,42 @@ public class src_EnemySpawner : MonoBehaviour
     [SerializeField]
     private bool SpawnWraith;
 
-    [Header("Maximum enenmy count")]
+    [Header("Maximum enemy count")]
     [SerializeField]
     private int maxCount;
+
+    [Header("Active")]
+    [SerializeField]
+    private bool activateOnStart;
+    private bool active;
 
     private int count = 0;
 
 
     // Start is called before the first frame update
     void Start()
+    {
+        if (activateOnStart)
+        {
+            active = true;
+            StartSpawning();
+        }
+    }
+
+    private IEnumerator spawnEnemy(float inverval, GameObject enemy)
+    {
+        if (count < maxCount)
+        {
+            yield return new WaitForSeconds(inverval);
+            if (count < maxCount)
+            {
+                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(coords.position.x - offsetX, coords.position.x + offsetX), coords.position.y, Random.Range(coords.position.z - offsetZ, coords.position.z + offsetZ)), Quaternion.identity);
+                count++;
+                StartCoroutine(spawnEnemy(inverval, enemy));
+            }
+        }
+    }
+    private void StartSpawning()
     {
         if (spawnMage)
         {
@@ -64,17 +91,12 @@ public class src_EnemySpawner : MonoBehaviour
         }
     }
 
-    private IEnumerator spawnEnemy(float inverval, GameObject enemy)
+    public void Activate()
     {
-        if (count < maxCount)
+        if (!active)
         {
-            yield return new WaitForSeconds(inverval);
-            if (count < maxCount)
-            {
-                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(coords.position.x - offsetX, coords.position.x + offsetX), coords.position.y, Random.Range(coords.position.z - offsetZ, coords.position.z + offsetZ)), Quaternion.identity);
-                count++;
-                StartCoroutine(spawnEnemy(inverval, enemy));
-            }
+            active = true;
+            StartSpawning();
         }
     }
 }

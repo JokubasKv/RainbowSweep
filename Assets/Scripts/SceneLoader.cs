@@ -11,4 +11,8 @@ public class SceneLoader : MonoBehaviour
         //Debug.Log("1");
         SceneManager.LoadScene("MoodyNight");
     }
+    public void StartMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

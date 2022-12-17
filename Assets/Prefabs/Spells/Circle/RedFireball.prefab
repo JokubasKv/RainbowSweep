@@ -139,7 +139,7 @@ MonoBehaviour:
   onSpawnGravity: 0
   onReleaseGravity: 1
   explosionDamage: 100
-  explosionRange: 1
+  explosionRange: 6
   maxCollisions: 2
   maxLifetime: 10
   explodeOnTouch: 1
