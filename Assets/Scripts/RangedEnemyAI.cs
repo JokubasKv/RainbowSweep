@@ -5,28 +5,39 @@ using UnityEngine.AI;
 
 public class RangedEnemyAI : MonoBehaviour
 {
+
+    [Header("Starting settings")]
+    public float damage;
     public NavMeshAgent agent;
-    public Transform player;
+    private Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
     public GameObject projectle;
     public Transform attackPoint;
+
+    GameObject target;
 
     public float health;
 
     Animator anim;
 
     //Patrolling
+    [Header("Patrolling settings")]
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
 
     //Attacking
+    [Header("Attacking settings")]
     public float timeBetweemAttacks;
     bool alreadyAttacked;
 
     //States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    [Header("Ranges")]
+    public float sightRange;
+    public float attackRange;
+    [Header("States")]
+    public bool playerInSightRange;
+    public bool playerInAttackRange;
 
     private void Start()
     {
@@ -35,6 +46,7 @@ public class RangedEnemyAI : MonoBehaviour
 
     private void Awake()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -48,6 +60,14 @@ public class RangedEnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            Debug.Log("HIT");
+        }
     }
 
     private void Patroling()
@@ -99,6 +119,7 @@ public class RangedEnemyAI : MonoBehaviour
         {
             Rigidbody rb = Instantiate(projectle, attackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            //target.GetComponent<src_CharacterStats>().TakeDamage(damage);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweemAttacks);

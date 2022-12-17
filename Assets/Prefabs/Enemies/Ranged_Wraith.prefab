@@ -100,15 +100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75399a6abaa8f6045b90181a43c4bce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   agent: {fileID: 2493559758292535524}
-  player: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4097
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  projectle: {fileID: 7112613924344935795, guid: 85f63b78021f0274c8b8e14807e04447,
+  projectle: {fileID: 7112613924344935795, guid: f82bd8f0283b08d42bb0a57bf151603f,
     type: 3}
   attackPoint: {fileID: 8235095665553467125}
   health: 120
@@ -143,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8235095665553467126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.55, z: 1}
+  m_LocalPosition: {x: 0, y: 1.55, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
