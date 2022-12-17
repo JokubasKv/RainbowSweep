@@ -48,7 +48,7 @@ MonoBehaviour:
     type: 3}
   warriorPrefab: {fileID: 92918609632864414, guid: 5bcdda9de8357574fa88b4ef38ae9919,
     type: 3}
-  wraithPrefab: {fileID: 5823726629884265641, guid: 66abd8fc754527a428b418e5746a9b83,
+  wraithPrefab: {fileID: 2493559758292535522, guid: 546cf034e17036e4698340c9a930372f,
     type: 3}
   mageInterval: 3.5
   warriorInterval: 5

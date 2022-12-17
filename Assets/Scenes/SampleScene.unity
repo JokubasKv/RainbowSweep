@@ -1940,22 +1940,37 @@ PrefabInstance:
     - target: {fileID: 2479865852335799578, guid: 93c842df0ecea4b47b6df90924c61164,
         type: 3}
       propertyPath: maxCount
-      value: 5
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479865852335799578, guid: 93c842df0ecea4b47b6df90924c61164,
+        type: 3}
+      propertyPath: spawnMage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479865852335799578, guid: 93c842df0ecea4b47b6df90924c61164,
+        type: 3}
+      propertyPath: SpawnWraith
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2479865852335799578, guid: 93c842df0ecea4b47b6df90924c61164,
         type: 3}
       propertyPath: mageInterval
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479865852335799578, guid: 93c842df0ecea4b47b6df90924c61164,
+        type: 3}
+      propertyPath: spawnWarrior
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2479865852335799578, guid: 93c842df0ecea4b47b6df90924c61164,
         type: 3}
       propertyPath: wraithInterval
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2479865852335799578, guid: 93c842df0ecea4b47b6df90924c61164,
         type: 3}
       propertyPath: warriorInterval
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2479865852335799579, guid: 93c842df0ecea4b47b6df90924c61164,
         type: 3}
@@ -1965,7 +1980,7 @@ PrefabInstance:
     - target: {fileID: 2479865852335799579, guid: 93c842df0ecea4b47b6df90924c61164,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.84
+      value: 23.37
       objectReference: {fileID: 0}
     - target: {fileID: 2479865852335799579, guid: 93c842df0ecea4b47b6df90924c61164,
         type: 3}
