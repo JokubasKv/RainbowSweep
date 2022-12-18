@@ -21,11 +21,6 @@ public class scr_ShapeCreator : MonoBehaviour
 
     public List<Spawnables> spawnables=new List<Spawnables>();
 
-
-    private void Start()
-    {
-
-    }
     public void SpawnObject(string objectName, List<LineRenderer> lines)
     {
         bool found=false;
