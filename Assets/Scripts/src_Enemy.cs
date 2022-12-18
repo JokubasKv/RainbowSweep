@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class src_Enemy : src_CharacterStats
 {
     [SerializeField]
+    Rigidbody rb;
+
+    [SerializeField]
     float damage;
     float lastAttackTime = 0;
 
@@ -20,11 +23,16 @@ public class src_Enemy : src_CharacterStats
     GameObject target;
     Animator anim;
 
+
+    bool isBeingKnocbacked = false;
+    Vector3 knobackDirection;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         target = GameObject.FindGameObjectWithTag("Player");
+        if (rb == null) gameObject.GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -40,6 +48,24 @@ public class src_Enemy : src_CharacterStats
         {
             GoToTarget();
         }
+    }
+    private void FixedUpdate()
+    {
+        if (isBeingKnocbacked)
+        {
+
+        }
+    }
+
+    public IEnumerator Knocback(Vector3 direction, float force)
+    {
+        agent.updatePosition = false;
+        rb.AddForce(direction * force, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(2f);
+
+        agent.updatePosition = true;
+
     }
 
     private void GoToTarget()
