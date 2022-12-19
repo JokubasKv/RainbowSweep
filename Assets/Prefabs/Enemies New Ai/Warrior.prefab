@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 92918609632864410}
   - component: {fileID: 92918609632864411}
   - component: {fileID: 92918609632864412}
-  - component: {fileID: 92918609632864413}
   - component: {fileID: 2452502715233699646}
+  - component: {fileID: 3773865987751859400}
   m_Layer: 8
   m_Name: Warrior
   m_TagString: Enemy
@@ -27,12 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92918609632864414}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.99, y: 0, z: 21.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 486570757334333990}
+  - {fileID: 1147829257794874363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -71,25 +72,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &92918609632864413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92918609632864414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ebc028383efab44aa334dd745aea57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 10
-  maxHealth: 20
-  isDead: 0
-  rb: {fileID: 0}
-  damage: 5
-  attackCooldown: 1
-  stoppingDistance: 2.5
 --- !u!54 &2452502715233699646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -106,6 +88,77 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
+--- !u!114 &3773865987751859400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92918609632864414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b33034c09b7cd7459ae32d917fb31c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  maxHealth: 10
+  isDead: 0
+  agent: {fileID: 0}
+  player: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4097
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  attackPoint: {fileID: 1147829257794874363}
+  enemyPatrols: 1
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 30
+  timeBetweenAttacks: 2
+  projectile: {fileID: 0}
+  sightRange: 30
+  attackRange: 1.21
+  playerInSightRange: 0
+  playerInAttackRange: 0
+  playerInLineOfSight: 0
+  wasChasingPlayer: 0
+  attacksAreBullets: 0
+  meeleeAttackDamage: 10
+  meeleeAttackDimensions: {x: 1.7, y: 1.55, z: 1.31}
+  rotationSpeed: 2
+  hordeController: {fileID: 0}
+--- !u!1 &7339766605917764496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147829257794874363}
+  m_Layer: 8
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147829257794874363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7339766605917764496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.236999, z: 0.338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 92918609632864410}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &92918610497641933
 PrefabInstance:
   m_ObjectHideFlags: 0

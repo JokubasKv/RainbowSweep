@@ -77,17 +77,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1ad06e818b049274dbefd22526042f86,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1481132
+      value: 78.0347
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ad06e818b049274dbefd22526042f86,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9189608
+      value: 2.7183
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ad06e818b049274dbefd22526042f86,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.44747263
+      value: 84.3394
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ad06e818b049274dbefd22526042f86,
         type: 3}
@@ -163,7 +163,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &941301723
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   newPositionThresholdDistance: 0.02
   lineWidth: 0.1
   defaultLineMaterial: {fileID: 2100000, guid: 4b97f74e4ddc95444aeea6042c420c4d, type: 2}
-  recognitionThreshold: 0.9
+  recognitionThreshold: 0.85
   OnRecognized:
     m_PersistentCalls:
       m_Calls:
@@ -244,7 +244,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
@@ -362,7 +362,7 @@ MonoBehaviour:
   - spawnables: {fileID: 7112613924344935795, guid: 85f63b78021f0274c8b8e14807e04447,
       type: 3}
     onWhatShape: Circle
-    spawnColor: {r: 1, g: 0, b: 0.06511307, a: 0}
+    spawnColor: {r: 1, g: 0, b: 0.009897232, a: 0}
   - spawnables: {fileID: 7112613924344935795, guid: 26e723e85c8aafe4cb6e1aed0b588f8e,
       type: 3}
     onWhatShape: X

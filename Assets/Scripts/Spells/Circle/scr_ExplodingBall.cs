@@ -71,6 +71,7 @@ public class scr_ExplodingBall : MonoBehaviour
             if (enemies[i].CompareTag("Enemy"))
             {
                 src_Enemy script;
+                scr_EnemyAi scriptAi;
                 if (script = enemies[i].GetComponent<src_Enemy>())
                 {
                     script.TakeDamage(explosionDamage);
@@ -78,6 +79,14 @@ public class scr_ExplodingBall : MonoBehaviour
                 else if (script = enemies[i].GetComponentInParent<src_Enemy>())
                 {
                     script.TakeDamage(explosionDamage);
+                }
+                else if (scriptAi = enemies[i].GetComponent<scr_EnemyAi>())
+                {
+                    scriptAi.TakeDamage(explosionDamage);
+                }
+                else if ( scriptAi = enemies[i].GetComponentInParent<scr_EnemyAi>())
+                {
+                    scriptAi.TakeDamage(explosionDamage);
                 }
             }
         }
