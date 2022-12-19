@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class scr_PlayerStats : src_CharacterStats
 {
@@ -19,6 +20,7 @@ public class scr_PlayerStats : src_CharacterStats
 
     public override void Die()
     {
+        SceneManager.LoadScene("MainMenu");
         Debug.Log("GAME OVER!");
     }
 
