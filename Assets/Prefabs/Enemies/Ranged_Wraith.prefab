@@ -111,10 +111,10 @@ MonoBehaviour:
   projectle: {fileID: 7112613924344935795, guid: f82bd8f0283b08d42bb0a57bf151603f,
     type: 3}
   attackPoint: {fileID: 8235095665553467125}
-  health: 120
+  health: 50
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 3
-  timeBetweemAttacks: 1.1
+  timeBetweemAttacks: 3
   sightRange: 20
   attackRange: 12
   playerInSightRange: 0
