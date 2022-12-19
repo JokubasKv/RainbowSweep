@@ -135,7 +135,7 @@ MonoBehaviour:
     type: 3}
   whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 64
   bouncinnes: 0.937
   onSpawnGravity: 0
   onReleaseGravity: 1

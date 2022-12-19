@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MoodyNight.unity
     guid: 6c5afed758d9dde4d96232ce7a139e63
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 3192f4d3abecdaa4ba0f4b7c485c51e8
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 49057bf77d46a544a857d8e8b2c80e05
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
