@@ -23,7 +23,7 @@ public class scr_ActivateTeleportationRay : MonoBehaviour
         }
         else
         {
-            Invoke("DeactivateTeleport", 0.2f);
+            Invoke("DeactivateTeleport", 0.1f);
         }
 
     }
@@ -31,6 +31,7 @@ public class scr_ActivateTeleportationRay : MonoBehaviour
     void DeactivateTeleport()
     {
         onTeleportCancel.Invoke();
+        Destroy(GameObject.Find("Reticle (Clone)"));
     }
 
 }

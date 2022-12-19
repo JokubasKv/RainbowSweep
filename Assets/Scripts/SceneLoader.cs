@@ -9,15 +9,16 @@ public class SceneLoader : MonoBehaviour
     public void StartBtn()
     {
         //Debug.Log("1");
-        SceneManager.LoadScene("MoodyNight");
+        SceneManager.LoadScene("Level2");
+        
     }
     public void LevelTwo()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level3");
     }
     public void LevelThree()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("MoodyNight");
     }
     public void StartMainMenu()
     {

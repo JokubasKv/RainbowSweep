@@ -66,6 +66,7 @@ public class scr_HordeSpawner : MonoBehaviour
     {
         hordeEnemyKilledCount += 1;
         hordeEnemyCount -= 1;
+
     }
 
     private void ResetSpawn()

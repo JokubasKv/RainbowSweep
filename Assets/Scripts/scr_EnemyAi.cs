@@ -32,10 +32,13 @@ public class scr_EnemyAi : src_CharacterStats
     public int meeleeAttackDamage;
     public Vector3 meeleeAttackDimensions;
 
+
     private Quaternion lookRotation;
     private Vector3 direction;
 
     public float rotationSpeed = 1;
+
+    public GameObject dropOnDeath;
 
     public scr_HordeSpawner hordeController;
 
@@ -194,6 +197,9 @@ public class scr_EnemyAi : src_CharacterStats
     public override void Die()
     {
         Destroy(gameObject);
+
+        if (dropOnDeath != null) Instantiate(dropOnDeath,transform.position,Quaternion.identity);
+        if (hordeController != null) hordeController.EnemyDied();
     }
 
 

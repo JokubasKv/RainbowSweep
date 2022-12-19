@@ -48,8 +48,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0562441, y: 2.3953428, z: 1}
-  m_Center: {x: -0.028122127, y: 0.6976714, z: 0}
+  m_Size: {x: 1, y: 2.4942443, z: 1}
+  m_Center: {x: -0, y: 0.7471225, z: 0}
 --- !u!195 &4009841715704165471
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -112,12 +112,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackPoint: {fileID: 5131493742297622603}
-  enemyPatrols: 0
+  enemyPatrols: 1
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 30
   timeBetweenAttacks: 2
   projectile: {fileID: 0}
-  sightRange: 30
+  sightRange: 100
   attackRange: 1.6
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -126,8 +126,9 @@ MonoBehaviour:
   attacksAreBullets: 0
   meeleeAttackDamage: 5
   meeleeAttackDimensions: {x: 1.17, y: 1.37, z: 1}
-  rotationSpeed: 1
-  dropOnDeath: {fileID: 0}
+  rotationSpeed: 3
+  dropOnDeath: {fileID: 865898321406211521, guid: 2b3a4ef64c921bd468a239f2234c7123,
+    type: 3}
   hordeController: {fileID: 0}
 --- !u!1 &8060292337978802973
 GameObject:
