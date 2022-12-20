@@ -31,7 +31,7 @@ public class scr_ActivateTeleportationRay : MonoBehaviour
     void DeactivateTeleport()
     {
         onTeleportCancel.Invoke();
-        Destroy(GameObject.Find("Reticle (Clone)"));
+        Destroy(GameObject.Find("Reticle(Clone)"));
     }
 
 }

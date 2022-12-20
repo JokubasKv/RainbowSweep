@@ -165,20 +165,15 @@ public class scr_EnemyAi : src_CharacterStats
         alreadyAttacked = false;
     }
 
-    private void DestroyEnemy()
-    {
-        if (hordeController != null) hordeController.EnemyDied();
-
-        Destroy(gameObject);
-    }
-
     private bool CheckLineOfSight()
     {
         RaycastHit hit;
-        Vector3 direction = player.position - transform.position;
-        if (Physics.Raycast(transform.position, direction, out hit))
+        Vector3 direction = player.position - attackPoint.position;
+        if (Physics.Raycast(attackPoint.position, direction, out hit,whatIsPlayer))
         {
-            Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
+            Debug.DrawRay(attackPoint.position, direction * hit.distance, Color.yellow);
+            Debug.Log(hit.transform.gameObject.name);
+
             if (hit.collider.CompareTag("Player"))
             {
                 return true;
@@ -196,10 +191,9 @@ public class scr_EnemyAi : src_CharacterStats
 
     public override void Die()
     {
-        Destroy(gameObject);
-
         if (dropOnDeath != null) Instantiate(dropOnDeath,transform.position,Quaternion.identity);
         if (hordeController != null) hordeController.EnemyDied();
+        Destroy(gameObject);
     }
 
 

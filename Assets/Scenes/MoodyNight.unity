@@ -6330,6 +6330,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyRock
       objectReference: {fileID: 0}
+    - target: {fileID: 5789999802860818115, guid: ab761937c02e31c4b8b9f0456a444223,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab761937c02e31c4b8b9f0456a444223, type: 3}
 --- !u!1 &5275652780543713696 stripped

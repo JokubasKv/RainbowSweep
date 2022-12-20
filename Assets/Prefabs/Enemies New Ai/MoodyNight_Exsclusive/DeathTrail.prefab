@@ -145,5 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 48.31, y: 8.78, z: 49.07}
-  smooth: 1
-  speed: 1
+  journeyTime: 10

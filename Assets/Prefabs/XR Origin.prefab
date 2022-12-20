@@ -1549,6 +1549,7 @@ GameObject:
   - component: {fileID: 2666374565177906161}
   - component: {fileID: 2666374565177906160}
   - component: {fileID: 2666374565177906163}
+  - component: {fileID: 1890452479}
   m_Layer: 6
   m_Name: XR Origin
   m_TagString: Player
@@ -1565,7 +1566,7 @@ Transform:
   m_GameObject: {fileID: 2666374565177906166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2666374565737790901}
@@ -1678,6 +1679,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 2666374565177906174}
   m_DelayTime: 0
+--- !u!65 &1890452479
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666374565177906166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3159386, y: 2.5335352, z: 0.41463906}
+  m_Center: {x: -0.00045783925, y: 0.7667676, z: 0.024330573}
 --- !u!1 &2666374565397060176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +1770,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2666374565461028677
 GameObject:
